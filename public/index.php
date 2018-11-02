@@ -21,7 +21,7 @@
 
 	//membuat function untuk mengatur pesan error
 	function setReporting() {
-		if('DEVELOPMENT_ENVIRONMENT' ==true) {
+		if(DEVELOPMENT_ENVIRONMENT ==true) {
 			error_reporting(E_ALL);
 			ini_set('display_errors', 'On');
 		}else {
@@ -38,7 +38,7 @@
 
 		$urlArray = explode("/", $url);
 
-		$controller = (!empty($urlArray[0])) ? $urlArray[0] : 'DEFAULT CONTROLLER';
+		$controller = (!empty($urlArray[0])) ? $urlArray[0] : DEFAULT_CONTROLLER;
 
 		$controllerPath = ROOT .'/application/controllers/'.ucfirst($controller) .'Controller.php';
 		if(file_exists($controllerPath)) {
